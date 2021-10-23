@@ -3,17 +3,15 @@ AddCSLuaFile( "shared.lua" )
 include( 'shared.lua' )
 
 local Burn_Sound = Sound("Fire.Plasma")
-util.PrecacheModel("models/weapons/w_missile.mdl")
+util.PrecacheModel("models/props_junk/watermelon01.mdl")
 
 function ENT:Initialize()
 
-        self.Entity:SetModel("models/weapons/w_missile.mdl")       
+        self.Entity:SetModel("models/props_junk/watermelon01.mdl")       
         self.Entity:PhysicsInitSphere( 4, "metal_bouncy" )        
         local phys = self.Entity:GetPhysicsObject()
         if (phys:IsValid()) then
                 phys:Wake()
-                phys:SetDamping( .0001, .0001 )
-                phys:EnableGravity( false )
         end
         
         self.Entity:SetAngles(self.Entity:GetOwner():GetAimVector():Angle())       
@@ -22,9 +20,6 @@ function ENT:Initialize()
         self.Sound = CreateSound( self.Entity, Burn_Sound )
         self.Sound:SetSoundLevel( 95 )
         self.Sound:Play()
-        
-        self:StartMotionController()
-        
 end
 
 function ENT:OnRemove()
