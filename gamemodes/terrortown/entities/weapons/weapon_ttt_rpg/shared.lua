@@ -12,7 +12,7 @@ if ( CLIENT ) then
    SWEP.EquipMenuData = {
       type="Weapon",
       model="models/weapons/w_eq_fraggrenade_thrown.mdl",
-      name="RPG",
+      name="Melon Launcher",
       desc=[[
 	  Left-Click:
 	  Shoot Melon
@@ -93,7 +93,7 @@ function SWEP:PrimaryAttack()
                 
                 local phys = grenade:GetPhysicsObject()
                 if (phys:IsValid()) then
-                        phys:SetVelocity( self.Owner:GetAimVector() * 2000 )
+                        phys:SetVelocity( self.Owner:GetAimVector() * 1600 )
                 end
               
                 
