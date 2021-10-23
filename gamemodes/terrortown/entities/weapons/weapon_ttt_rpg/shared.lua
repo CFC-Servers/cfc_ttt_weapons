@@ -1,11 +1,11 @@
 if ( SERVER ) then
         AddCSLuaFile( "shared.lua" )	
         resource.AddFile("materials/vgui/ttt/icon_rpg.png")		
-		resource.AddWorkshop( "712005457" )
+	resource.AddWorkshop( "712005457" )
 end
 
 if ( CLIENT ) then
-   SWEP.PrintName = "RPG"
+   SWEP.PrintName = "Melon Launcher"
    SWEP.Slot = 7
    SWEP.SlotPos	= 0
    
@@ -15,7 +15,7 @@ if ( CLIENT ) then
       name="RPG",
       desc=[[
 	  Left-Click:
-	  Shot Rocket
+	  Shoot Melon
 	  
 	  Right-Click:
 	  Say something...]]
@@ -93,7 +93,7 @@ function SWEP:PrimaryAttack()
                 
                 local phys = grenade:GetPhysicsObject()
                 if (phys:IsValid()) then
-                        phys:SetVelocity( self.Owner:GetAimVector() * 3000 )
+                        phys:SetVelocity( self.Owner:GetAimVector() * 2000 )
                 end
               
                 
